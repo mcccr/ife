@@ -22,11 +22,17 @@
   */
   document.getElementById("button").onclick=function(){
     var value=document.getElementById("aqi-input").value;
-    if(value!=null){
-    document.getElementById("aqi-display").innerHTML=value;
+    console.log(value);
+    if(!isNaN(value)){
+      if(value<=2000&&value>=1){
+        document.getElementById("aqi-display").innerHTML=value;
+      }
+      else{
+        document.getElementById("aqi-display").innerHTML="输入数值超出范围";
+      }
     }
     else{
-    document.getElementById("aqi-display").innerHTML="尚无录入"
+    document.getElementById("aqi-display").innerHTML="请输入1-2000的有效数字";
     }
   }
 })();
